@@ -49,6 +49,7 @@
     <Compile Include="RandomGenerator.cs" />
     <Compile Include="RandomGeneratorDerrived.cs" />
     <Compile Include="RandomGeneratorSampling.cs" />
+    <Compile Include="RandomGeneratorSequence.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
