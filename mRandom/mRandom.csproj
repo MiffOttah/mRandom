@@ -47,6 +47,8 @@
     <Compile Include="IRandomnessSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomGenerator.cs" />
+    <Compile Include="RandomGeneratorDerrived.cs" />
+    <Compile Include="RandomGeneratorSampling.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
