@@ -50,6 +50,8 @@
     <Compile Include="RandomGeneratorDerrived.cs" />
     <Compile Include="RandomGeneratorSampling.cs" />
     <Compile Include="RandomGeneratorSequence.cs" />
+    <Compile Include="SequenceSamplingExceptions.cs" />
+    <Compile Include="WeightedSampling.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

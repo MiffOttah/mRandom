@@ -18,6 +18,9 @@ namespace MiffTheFox.mRandom
         public T Pick<T>(IEnumerable<T> source)
         {
             var sourceList = _CollapseToList(source);
+            if (sourceList.Count == 0) throw new SampleFromEmptinessException();
+            if (sourceList.Count == 1) return sourceList[0];
+
             int choice = RandomLessThan(sourceList.Count);
             return sourceList[choice];
         }
@@ -52,7 +55,7 @@ namespace MiffTheFox.mRandom
             if (samples <= 0) throw new ArgumentException("Must take 1 or more samples.");
                     
             var shuffled = Shuffle(source);
-            if (samples > shuffled.Length) throw new InvalidOperationException("Not enough data in the source to take the provided number of samples.");
+            if (samples > shuffled.Length) throw new InsufficientDataToSampleFromException();
             if (samples == shuffled.Length) return shuffled;
 
             var result = new T[samples];

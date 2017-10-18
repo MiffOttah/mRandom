@@ -58,5 +58,39 @@ namespace MiffTheFox.mRandom.Tests
                 }
             }
         }
+
+        [TestMethod]
+        public void BadPickTest()
+        {
+            using (var r = new RandomGenerator(new SystemRandomRandomnessSource()))
+            {
+                Assert.ThrowsException<SampleFromEmptinessException>(() => r.Pick(Enumerable.Empty<object>()));
+
+                var someData = new int[] { 1, 2 };
+                Assert.ThrowsException<InsufficientDataToSampleFromException>(() => r.SampleWithoutReplacement(someData, 6));
+            }
+        }
+
+        [TestMethod]
+        public void WeightedSamplingTest()
+        {
+            using (var r = new RandomGenerator(new SystemRandomRandomnessSource()))
+            {
+                var samples = new WeightedSampling<string>
+                {
+                    { "Common", 0.8 },
+                    { "Rare1", 0.1 },
+                    { "Rare2", 0.1 }
+                };
+                var results = new List<string>(ITERATIONS);
+
+                for (int i = 0; i < ITERATIONS; i++)
+                {
+                    results.Add(samples.Sample(r));
+                }
+
+                Assert.IsTrue(results.Count(res => res == "Common") >= (results.Count / 2));
+            }
+        }
     }
 }
