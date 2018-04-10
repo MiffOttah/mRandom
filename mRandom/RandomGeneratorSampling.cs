@@ -14,27 +14,27 @@ namespace MiffTheFox.mRandom
         /// <param name="length">The length of string to get.</param>
         public BinString RandomBinString(int length)
         {
-            return _Source.GetRandomBytes(length);
+            return Source.GetRandomBytes(length);
         }
 
         public int RandomInt32()
         {
-            return _Source.GetRandomBytes(4).ToInt32(null) & int.MaxValue;
+            return Source.GetRandomBytes(4).ToInt32(null) & int.MaxValue;
         }
 
         public uint RandomUInt32()
         {
-            return _Source.GetRandomBytes(4).ToUInt32(null);
+            return Source.GetRandomBytes(4).ToUInt32(null);
         }
 
         public long RandomInt64()
         {
-            return _Source.GetRandomBytes(8).ToInt64(null) & long.MaxValue;
+            return Source.GetRandomBytes(8).ToInt64(null) & long.MaxValue;
         }
 
         public ulong RandomUInt64()
         {
-            return _Source.GetRandomBytes(8).ToUInt64(null);
+            return Source.GetRandomBytes(8).ToUInt64(null);
         }
 
         public float RandomSingle()

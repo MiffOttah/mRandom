@@ -23,7 +23,6 @@ namespace MiffTheFox.mRandom
 
         public void Dispose()
         {
-            _RNG = null;
         }
 
         public BinString GetRandomBytes(int length)

@@ -54,6 +54,7 @@
     <Compile Include="SamplingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SequenceTests.cs" />
+    <Compile Include="SourceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
