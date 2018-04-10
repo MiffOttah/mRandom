@@ -15,6 +15,9 @@ namespace MiffTheFox.mRandom
             return source.ToArray();
         }
 
+        /// <summary>
+        /// Selects a random item from the source.
+        /// </summary>
         public T Pick<T>(IEnumerable<T> source)
         {
             var sourceList = _CollapseToList(source);
@@ -25,6 +28,9 @@ namespace MiffTheFox.mRandom
             return sourceList[choice];
         }
 
+        /// <summary>
+        /// Returns an array of the source's items in a random order.
+        /// </summary>
         public T[] Shuffle<T>(IEnumerable<T> source)
         {
             var sourceList = _CollapseToList(source);
@@ -50,6 +56,11 @@ namespace MiffTheFox.mRandom
             return result;
         }
 
+        /// <summary>
+        /// Takes a random selection of samples from the source, not selecting each item more than once.
+        /// </summary>
+        /// <param name="source">The source to sample from</param>
+        /// <param name="samples">The number of samples to take</param>
         public T[] SampleWithoutReplacement<T>(IEnumerable<T> source, int samples)
         {
             if (samples <= 0) throw new ArgumentException("Must take 1 or more samples.");

@@ -7,6 +7,9 @@ using System.Security.Cryptography;
 
 namespace MiffTheFox.mRandom
 {
+    /// <summary>
+    /// A randomess source that draws from System.Random.
+    /// </summary>
     public class SystemRandomRandomnessSource : IRandomnessSource
     {
         private Random _RNG;
@@ -32,7 +35,10 @@ namespace MiffTheFox.mRandom
             return new BinString(b);
         }
     }
-    
+
+    /// <summary>
+    /// A randomness source that draws from System.Security.Cryptography.RandomNumberGenerator.
+    /// </summary>
     public class CryptoRandomnessSource : IRandomnessSource
     {
         private RandomNumberGenerator _RNG;

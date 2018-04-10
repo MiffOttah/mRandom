@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace MiffTheFox.mRandom
 {
+    /// <summary>
+    /// A list of items where each item has an associated weight that can be used to take a weighted random sample.
+    /// </summary>
+    /// <typeparam name="T">The type of items for sampling from.</typeparam>
     public class WeightedSampling<T> : ICollection<WeightedSamplingItem<T>>
     {
         private readonly List<WeightedSamplingItem<T>> _Items = new List<WeightedSamplingItem<T>>();
@@ -18,11 +22,17 @@ namespace MiffTheFox.mRandom
             _Items.Add(item);
         }
 
+        /// <summary>
+        /// Adds the item to the sampling with the specified weight.
+        /// </summary>
         public void Add(T item, double weight = 1.0)
         {
             Add(new WeightedSamplingItem<T>(item, weight));
         }
 
+        /// <summary>
+        /// Removes all items from the sampling.
+        /// </summary>
         public void Clear()
         {
             _Items.Clear();
@@ -31,6 +41,11 @@ namespace MiffTheFox.mRandom
         public bool Contains(WeightedSamplingItem<T> item)
         {
             return _Items.Contains(item);
+        }
+
+        public bool Contains(T item)
+        {
+            return _Items.Any(i => i.ValueEquals(item));
         }
 
         public void CopyTo(WeightedSamplingItem<T>[] array, int arrayIndex)
@@ -53,6 +68,10 @@ namespace MiffTheFox.mRandom
             return ((ICollection<WeightedSamplingItem<T>>)_Items).GetEnumerator();
         }
 
+        /// <summary>
+        /// Randomly selects an item from the sampling. 
+        /// </summary>
+        /// <param name="rng">The RandomGenerator that makes the selection.</param>
         public T Sample(RandomGenerator rng)
         {
             if (_Items.Count == 1) return _Items[0].Value;
@@ -114,6 +133,18 @@ namespace MiffTheFox.mRandom
             else
             {
                 return false;
+            }
+        }
+
+        public bool ValueEquals(object obj)
+        {
+            if (object.ReferenceEquals(Value, null))
+            {
+                return object.ReferenceEquals(obj, null);
+            }
+            else
+            {
+                return Value.Equals(obj);
             }
         }
     }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MiffTheFox.mRandom
 {
+    /// <summary>
+    /// Generates randomized data.
+    /// </summary>
     public partial class RandomGenerator : IDisposable
     {
         public IRandomnessSource Source { get; }
