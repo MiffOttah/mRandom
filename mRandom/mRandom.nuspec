@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>MiffTheFox</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/MiffOttah/mRandom/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/MiffOttah/mRandom</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides methods and classes for working with randomness.</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright 2018 MiffTheFox</copyright>
+    <tags>randomness random rng</tags>
+  </metadata>
+</package>
