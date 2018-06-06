@@ -51,6 +51,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PcgTests.cs" />
     <Compile Include="SamplingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SequenceTests.cs" />
@@ -60,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\mRandomPCG\mRandomPCG.csproj">
+      <Project>{327fa817-cc15-4e20-a8d8-43029e4dfece}</Project>
+      <Name>mRandomPCG</Name>
+    </ProjectReference>
     <ProjectReference Include="..\mRandom\mRandom.csproj">
       <Project>{57396583-a515-427a-8970-91f7c8419b21}</Project>
       <Name>mRandom</Name>
